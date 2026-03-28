@@ -1,0 +1,53 @@
+---
+title: "Comparative Analysis of Articles on Immigration Across Three Media Houses having Different Political Biases"
+---
+
+```{r}
+library(knitr)
+```
+
+::: {.panel-tabset}
+
+# 2016
+
+```{r}
+#| label: fig-Emotions-Comparison-2016
+#| fig-cap: "Percentage of all words in CNBC, Vox, and The Daily Wire immigration articles from 2016 and 2024 corresponding to emotions bucketed by NRC lexicon"
+#| fig-align: center
+#| out-width: 100%
+
+include_graphics("images/comparison_barplot_2016.png")
+```
+
+# 2024
+
+```{r}
+#| label: fig-Emotions-Comparison-2024
+#| fig-cap: "Percentage of all words in CNBC, Vox, and The Daily Wire immigration articles from 2016 and 2024 corresponding to emotions bucketed by NRC lexicon"
+#| fig-align: center
+#| out-width: 100%
+
+include_graphics("images/comparison_barplot_2024.png")
+```
+
+In 2024, the sentiment analysis reveals significant variations in the emotional tones used by Vox, CNBC, and The Daily Wire, reflecting their respective political alignments. The differences in how each outlet portrays immigration issues can provide deeper insights into how political perspectives influence media framing.
+
+**Vox (Left-Leaning)**: Vox emphasizes relatively positive emotions like *trust* and *anticipation* in its immigration coverage in both years, suggesting a focus on optimism and forward-looking narratives surrounding immigration. This aligns with its generally left-leaning stances of focusing on the need for inclusive policies across socio-economic sectors. The lower emphasis on *anger* and *disgust* reflects an attempt to frame immigration issues in a more empathetic light. However, *anger* and *fear* are likely to have been invoked in articles reporting directly on Donald Trump's rhetoric or in expressing concerns over the Republican party's anti-immigration stance in both election cycles.
+
+**CNBC (Center-Leaning)**: CNBC, as a centrist outlet, maintains a balanced distribution of emotions. While *trust* and *anticipation* are prominent, *fear* and *sadness* also appear, indicating a nuanced approach that acknowledges the complexities of immigration policy without veering into partisan rhetoric. This middle-ground tone is consistent with its positioning, appealing to a diverse audience with varying political ideologies and independents.
+
+**The Daily Wire (Right-Leaning)**: The Daily Wire demonstrates a heavy emphasis on *fear* and *anger*, which are highlighted likely due to a focus on perceived threats posed by immigration in their coverage. This framing aligns with the outlet's right-leaning perspective, which prioritizes stricter border controls and critiques of liberal immigration policies. The lower proportion of *trust* likely suggests skepticism towards immigration reforms or policies perceived as lenient.
+
+**Comparison**: The stark emotional contrasts highlight how media outlets shape public perception through selective emotional framing. Left-leaning Vox focuses on trust and hope, aiming to promote understanding and empathy regarding immigration. Center-leaning CNBC strikes a balance, reflecting on both opportunities and challenges. Meanwhile, right-leaning The Daily Wire leans on fear and anger, emphasizing potential risks and criticisms of the issue. This divergence underscores the role of media bias in shaping narratives and public opinion around divisive issues like immigration. 
+
+
+# Conclusion
+From this blog analyzing a left, center, and right-leaning news sources, we observe that there was a negative sentiment shift in the center and right-leaning news sources and a slightly positive sentiment shift in the left-leaning news source on the topic of immigration from 2016 to 2024. A key finding was that in 2024, all news sources had a sentiment shift towards the negatives on the issue, although they were likely motivated by different triggers and highlights diverging priorities of the media outlets based on their respective political alignments. This finding also highlights key correlated factors to the polarization of U.S. political parties and the public sphere as a whole when it comes to immigration.
+
+From @fig-Emotions-Comparison-2016 and @fig-Emotions-Comparison-2024 we notice the NRC lexicon of positive emotions rose for Vox and declined for the Daily Wire. Right-leaning outlets such as The Daily Wire maintain a critical stance towards immigration reform. On the other hand, left-leaning outlets such as Vox, while emphasizing optimism regarding immigration, still reflect concerns tied to immigration policies, and thus, present a more negative sentiment as well. Even the center-leaning source, CNBC, which remained relatively neutralm adheres to the change in sentiment trend of the right and left-leaning new outlets, although CNBC's sentiment was not as negative as either source in both 2016 and 2024.
+
+This comparative analysis highlights the importance of media literacy and critical consumption of news to navigate the emotions, biases, and narratives framed by the journalists on all sides of the political spectrum, which is reflected in their coverage of contentious issues such as immigration. 
+
+:::
+
+

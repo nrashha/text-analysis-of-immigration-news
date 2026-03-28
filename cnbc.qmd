@@ -1,0 +1,71 @@
+---
+title: "CNBC - Analysis of Articles on Immigration"
+---
+
+```{r}
+library(knitr)
+```
+
+
+# Wordcloud Overview
+
+::: {.panel-tabset}
+
+## 2016
+
+![CNBC Word Cloud of 50 most common words from 10 CNBC immigration articles in 2016](images/cnbc_wc2016.png){#fig-CNBC-Word-Cloud-2016 fig-align="center" width="70%"} 
+
+
+In @fig-CNBC-Word-Cloud-2016, CNBC's immigration articles reflect the political discourse dominated by then-presidential candidate Donald Trump, with "*Trump* being the most prominent term. Other frequently mentioned words include **percent**, **Mexico**, **border**, and **workers**, highlighting key topics such as immigration policy, the proposed border wall, and economic implications of undocumented labor. Words like **American**, **president**, and **Republican** emphasize the election's political framing, while terms like **jobs** and **economy** reveal a focus on the economic effects of immigration.
+
+## 2024
+
+![CNBC Word Cloud of 50 most common words from 10 CNBC immigration articles in 2024](images/cnbc_wc2024.png){#fig-CNBC-Word-Cloud-2024 fig-align="center" width="70%"}
+
+In @fig-CNBC-Word-Cloud-2024 CNBC's immigration articles shift the focus slightly toward social and economic policy, with **workers**, **security**, **labor**, and **social**     among the largest terms. This indicates a broader discussion on labor markets, social programs like Medicare and Social Security, and economic impacts. While **Trump** remains present, signaling continued relevance of his immigration legacy, terms like **Biden**, **administration**, and **economists** reflect a more policy-driven narrative. Key phrases like **border** and **job** suggest that border control and employment opportunities remain central themes.
+
+:::
+
+
+# Sentiment Overview
+
+```{r}
+#| label: fig-CNBC-Sentiment-Overview
+#| fig-cap: "Average AFINN lexicon of all words in 10 CNBC immigration articles from 2016 and 2024"
+#| fig-align: center
+#| out-width: 100%
+
+include_graphics("images/cnbc_sentiment_trends.jpg")
+```
+
+The sentiment trend in @fig-CNBC-Sentiment-Overview of CNBC's immigration coverage, as analyzed using the AFINN lexicon, shows a shift from positive in 2016 to negative in 2024. This change is not influenced by neutral terms like "Trump" or "Biden," which lack intrinsic sentiment, but rather by the contexts and framing of immigration discussions during these years.
+
+In 2016, the language in the word cloud suggests a focus on economic impacts and opportunities. Words like **jobs**, **economy**, and **American** dominated discussions, framing immigration within a problem-solving narrative tied to economic growth or policy proposals. While politically charged, this coverage appears to emphasize solutions or opportunities, contributing to a more positive sentiment score.
+
+By 2024, the discourse shifts toward more critical and challenging aspects of immigration. Words like **security**, **border**, **labor**, and **social** suggest a heightened focus on policy enforcement, labor market strain, and the impact of immigration on social systems like Medicare and Social Security. The presence of terms like **undocumented** and **policy**     highlights contentious debates, possibly tied to perceived failures or inefficiencies. These discussions, framed around risks and pressures rather than opportunities, contribute to a more negative sentiment.
+
+The overall decline in sentiment reflects not only changes in the specific words used but also broader shifts in how immigration is discussed. By 2024, immigration appears framed more as a challenge to existing systems rather than as a potential driver of economic growth or opportunity, leading to a noticeable shift in tone and sentiment.
+
+
+
+
+# Sentiment Deepdive
+```{r}
+#| label: fig-CNBC-Sentiment-Deepdive
+#| fig-cap: "Percentage of all words in 10 CNBC immigration articles from 2016 and 2024 expressing emotions bucketed by NRC lexicon"
+#| fig-align: center
+#| out-width: 100%
+
+include_graphics("images/cnbc_emotions_barplot.png")
+```
+
+From @fig-CNBC-Sentiment-Deepdive, we see that trust and anticipation emerge as the most prominent emotions in both 2016 and 2024, but their prominence increases significantly in 2024. This shift may reflect a broader sense of hope or confidence regarding immigration policies or future immigration reform in 2024, which could be influenced by political or social developments during the year. For example, in 2024, there might have been discussions around new policies, reform efforts, or political changes that led to a more optimistic tone in coverage. The emphasis on anticipation could indicate that media coverage was more focused on what might happen in the future, fueling public interest in potential immigration reforms or shifts in the political landscape. 
+
+In contrast, emotions like anger and disgust were more prominent in 2016, likely reflecting a period of heightened controversy and polarizing debates surrounding immigration during the election year. These emotions could point to the more negative and charged nature of the discourse in 2016, where fear of immigration or the handling of related issues often sparked reactions of frustration or repulsion.
+
+Lastly, joy and sadness were relatively low across both years, suggesting that while emotions like hope and anger were more frequently expressed, the emotional extremes of happiness or sorrow were not central to the coverage of immigration. This could imply that the coverage was focused more on the political and practical aspects of immigration, rather than personal or human-interest stories that might evoke more profound emotional responses.
+
+
+# Comparing Sentiment Analysis based on Lexicon Type
+
+The emotion trend in @fig-CNBC-Sentiment-Deepdive, analyzed using the NRC emotion lexicon, suggests a shift towards more positive emotions in 2024, with a particular emphasis on trust. However, when comparing this to the findings from the AFINN lexicon, which assigns sentiment scores based on the intensity of positive and negative words, the overall sentiment becomes more negative in 2024. @fig-CNBC-Sentiment-Overview using AFINN lexicon shows a shift to negative sentiment values for 2024. This divergence in results occurs because AFINN focuses on the intensity of sentiment, while NRC captures the emotional tone. Thus, while the NRC lexicon highlights an emotional shift towards more positive coverage, the AFINN lexicon reflects a stronger overall negative sentiment due to the use of more intense negative terms related to immigration challenges and crises.

@@ -1,0 +1,62 @@
+---
+title: "Media Perspectives on Immigration in the U.S."
+subtitle: "How Left, Center, and Right-Leaning Media Houses Frame Immigration Issues"
+author: 
+- "Maria Khan"
+- "Deshan DeMel"
+- "Nahian Rashha"
+abstract: "This blog explores the growing political divide regarding immigration in the United States as reflected in news coverage from leading media outlets across the political spectrum. We attempt to analyze and compare how three prominent media houses framed immigration issues in 2016 and 2024 - the years when Trump was elected for Presidency - to explore their respective rhetorical strategies. We also aim to examine what the rhetoric employed by the outlets reveal about their political alignments. Through this analysis, we aim to understand the role of media in shaping public perception about immigration and its impact on the evolving political landscape in America."
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Improve digit display and NA display for kable tables
+options(scipen = 1, knitr.kable.NA = "")
+
+# Load necessary packages
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+
+
+# Introduction
+To explore how news outlets reflect political perspectives on immigration policy, we selected one news outlet from each side of the [political spectrum](https://www.allsides.com/media-bias/media-bias-chart): a right-leaning outlet, a center-leaning outlet, and a left-leaning outlet. Our selections are based on classifications made by media-bias charts from AllSides, a public-benefit corporation that comprises a team of politically diverse analysts who rate media houses based on data from public surveys and panels of political experts. The selected outlets are Vox (left-leaning), CNBC (center-aligned), and The Daily Wire (right-leaning).
+
+**[Vox: Left-Leaning](https://www.vox.com/)**                   |**[CNBC: Center-Aligned](https://www.cnbc.com/)**        | **[TDW: Right-Leaning](https://www.dailywire.com/)**.     |
+
+
+
+Our analytical focus is on two specific years: 2016 and 2024, both pivotal in shaping the national conversation on immigration. The 2016 election marked Donald Trump’s rise to prominence, with immigration at the forefront of his campaign. Proposals such as building a border wall and tightening immigration policies dominated news headlines and public discourse. Media outlets, often polarized in their coverage, played a significant role in shaping public perceptions and sparking national debates.
+
+Fast forward to 2024, another contentious election year, where immigration remains a divisive issue within a shifting national political context. Several years of policy changes, legal challenges, and cultural shifts have likely evolved the national narratives surrounding immigration since 2016. Does Trump’s influence persist, or have new voices and global dynamics reshaped the discussion? We attempt to answer these critical questions. 
+
+<hr>
+
+# Goal
+To explore shifts in media sentiments on immigration within the U.S. from 2016 to 2024, we analyzed 10 articles on immigration-related issues from each of the three selected major media outlets during both years. By examining the language, tone, and framing of immigration-related coverage, we aim to uncover patterns and shifts in sentiment that highlight how political discourse and media coverage have influenced public attitudes over time. Excluding the year 2020 ensures a focused comparison between two moments of heightened debates, controversies, and transformation, shedding light on how immigration continues to shape the nation’s identity and politics.
+
+# Methodology for Data Collection
+To analyze the coverage of immigration in 2016 and 2024 across the media outlets, we examined the 10 most relevant or latest articles on immigration from each year depending on how many articles were available on the topic. This selection ensures a comprehensive focus on immigration-related topics during these critical years.  The analysis involved pre-processing the text to prepare it for visualization. This included cleaning the dataset by removing punctuation, stopwords (e.g., "the," "and"), and numbers, followed by tokenizing the text to extract individual words. Additionally, we excluded the words "immigration" and "migrants", as their frequent repetition across the articles did not provide meaningful insights for the analysis.
+
+# Methodology for Wordcloud Analysis
+After pre-processing the data for both years from each of the outlets, we analyzed word frequencies to determine their prominence in the word cloud corresponding to a specific outlet-year pairing. This allowed us to highlight recurring themes in the immigration coverage of CNBC, Vox and The Daily Wire and note the differences in year-to-year coverage for each of the outlets. Using the *wordcloud* library in R, we generated visually engaging graphics that provide a quick overview of the most common terms in the articles from each outlet-year pairing. Larger words represent higher frequencies, offering insights into the primary focus areas of the coverage, while smaller words indicate less frequent topics. This visualizations serve as foundation for more detailed analyses.
+
+# Methodology for Sentiment Overview Analysis
+To evaluate the sentiment of each media outlet's immigration coverage in 2016 and 2024, we employed the **AFINN lexicon**, which assigns a sentiment score to individual words ranging from -5 (strongly negative) to +5 (strongly positive). After tokenizing the text into individual words, we joined the dataset of tokenized words with the AFINN lexicon based on matching words. This join allowed us to assign sentiment scores (`value`) to each word appearing in the articles. For each word in an outlet-year pairing, we calculated a weighted sentiment score by multiplying the word's frequency (`n`) by its assigned sentiment score. Summing these weighted scores provided the total sentiment score for the year, while summing word frequencies gave the total word count. Finally, the average sentiment score for the year was calculated by dividing the total sentiment score by the total word count. This process normalizes the sentiment across both years and highlights any shifts in tone between 2016 and 2024. This enables a direct year-to-year comparison of each outlets' coverage of immigration.
+
+# Methodology for Sentiment Deepdive Analysis 
+This analysis utilized the NRC Emotion Lexicon, and categorized words into eight primary emotions: Anger, Anticipation, Disgust, Fear, Joy, Sadness, Surprise, and Trust. Each emotion reflects a specific tone, allowing us to capture the emotional underpinnings of media content related to immigration from each outlet. The articles were first joined with the NRC lexicon to identify emotionally charged keywords. Words associated with the eight primary emotions were filtered, and the results were grouped by sentiment. The total frequency of words for each emotion was calculated, and these values were normalized as proportions of the total word count. This proportional analysis highlights the relative emphasis on each emotion in the articles.
+
+<!-- 
+You can edit the name of the following heading (e.g. "Resources", "Bibliography", "Works cited") but do not otherwise delete or modify the following lines
+-->
+
+# References {#sec-references}
+
+::: {#refs}
+:::
+
